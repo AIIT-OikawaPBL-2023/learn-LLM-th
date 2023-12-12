@@ -1,0 +1,48 @@
+{
+    // ファイルの中に紛れ込んだ全角スペースを見つけやすくするための設定
+    "editor.renderWhitespace": "all",
+    // 常に新しいタブで開く
+    "editor.suggest.preview": true,
+    // Lint機能の設定方法が新しくなった https://github.com/microsoft/vscode-python/wiki/Migration-to-Python-Tools-Extensions
+    // VS CodeのExtension設定から有効無効を切り替えられるようになった
+    // Pylance
+    "python.languageServer": "Pylance",
+    "python.analysis.completeFunctionParens": true,
+    // flake8: Pythonのコードをチェックするツール
+    "flake8.args": [
+        // black の最大文字列数(default= 88) と flake8 の最大文字列数(default= 79)と異なるため調整　(ref: https://dk521123.hatenablog.com/entry/2021/11/10/095258)
+        "--max-line-length=210",
+        // E203 :コロンの前に空白が入っている
+        // W503: 演算子の前に改行
+        // W504: 演算子の後に改行
+        "--ignore=E203,W503,W504"
+    ],
+    "black-formatter.args": [
+        // black の最大文字列数(default= 88) と flake8 の最大文字列数(default= 79)と異なるため調整
+        "--line-length=210"
+    ],
+    // Formatter(black): 自動的にコードを整形する
+    //"python.formatting.blackPath": "black",
+    // Pythonコードの整形に何を使用するか
+    //"python.formatting.provider": "none",
+    // 保存時にフォーマットをON
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // pytest起動時のオプションを三つ設定 
+    // ".": 対象ディレクトリ,
+    // --capture=tee-sys: テストコード内で標準出力された内容をpytestがキャプチャしてターミナルに出力してくれる
+    // --vv: pytestがキャプチャした出力を途中で切らずに全て出力
+    "python.testing.pytestArgs": [
+        ".",
+        "--capture=tee-sys",
+        "-vv"
+    ],
+    // Pytestでunittestを使わないようにする
+    "python.testing.unittestEnabled": false,
+    // VS Codeがpytestを使ってテストコードを検索
+    "python.testing.pytestEnabled": true,
+    // Docstringのスタートを改行する
+    "autoDocstring.startOnNewLine": true,
+}

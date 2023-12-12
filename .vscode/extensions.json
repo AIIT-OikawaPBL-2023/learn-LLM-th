@@ -1,0 +1,27 @@
+// RecommendするエクステンションのIDを追加します。
+{
+    "recommendations": [
+        // pythonの拡張
+        "ms-python.python",
+        // pytest
+        "LittleFoxTeam.vscode-python-test-adapter",
+        // jupyterの拡張
+        "ms-toolsai.jupyter",
+        // pythonのインデントを自動で生成する拡張 https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent
+        "KevinRose.vsc-python-indent",
+        // GitGraph gitを視覚的に表現する拡張
+        "mhutchie.git-graph",
+        // Pylance
+        "ms-python.vscode-pylance",
+        // Flake8 Lint
+        "ms-python.flake8",
+        // Black Formatter
+        "ms-python.black-formatter",
+        // autoDocstring
+        "njpwerner.autodocstring",
+        // PlantUML https://qiita.com/couzie/items/9dedb834c5aff09ea7b2
+        "jebbs.plantuml",
+        // cloud code for VS CODE https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode&ssr=false#overview
+        "googlecloudtools.cloudcode",
+    ]
+}
